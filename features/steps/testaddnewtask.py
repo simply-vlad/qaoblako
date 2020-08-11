@@ -37,6 +37,10 @@ def step_impl(context,text1):
 def step_impl(context):
     context.browser.find_element_by_id("submit_add_todo").click()
 
+@then(u'checking the correct of adding a category')
+def step_impl(context):
+    assert context.browser.find_element_by_css_selector(".container > div:nth-child(3) > div.shadow_todos > form:nth-child(29) > ul > table > tbody> tr> td:nth-child(3) > label[id='7484']"), "Задача добавлена"
+
 @then(u'close browser')
 def step_impl(context):
     time.sleep(5)

@@ -47,6 +47,10 @@ def step_impl(context,text3):
 def step_impl(context):
     context.browser.find_element_by_id("submit_add_todo").click()
 
+@then(u'checking the correct of adding a category and task')
+def step_impl(context):
+    assert context.browser.find_element_by_css_selector(".container > div:nth-child(5) > div.shadow_todos > h2:last-of-type"), "Категория Работа QA добавлена"
+    assert context.browser.find_element_by_css_selector(".container > div:nth-child(5) > div.shadow_todos > form:nth-child(17) > ul > table > tbody > tr  > td:nth-child(3) > label[id='7489']"), "Задача Я пытался1 добавлена"
 
 @then(u'Write false name new category "{text0}"')
 def step_impl(context,text0):
@@ -62,6 +66,11 @@ def step_impl(context,text01):
 @then(u'click finish button')
 def step_impl(context):
     context.browser.find_element_by_id("submit_add_todo").click()
+
+@then(u'checking the false of adding a category and task')
+def step_impl(context):
+    assert context.browser.find_element_by_css_selector(".container > div:nth-child(6) > div.shadow_todos > h2:last-of-type"), "Неверная пустая категория"
+    assert context.browser.find_element_by_css_selector(".container > div:nth-child(6) > div.shadow_todos > form:nth-child(16) > ul > table > tbody > tr  > td:nth-child(3) > label[id='7490']"), "Неверная пустая задача"
 
 @then(u'close Chrome browser')
 def step_impl(context):
