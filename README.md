@@ -6,6 +6,10 @@ behave - i testaddnewtask.feature
 
 behave - i newcategory.feature
 
+behave -i oldtask.feature
+
+behave -i testbutton.feature
+
 
 Для запуска тестов на докере выполнялись следующие команды:
 
@@ -18,3 +22,7 @@ cd features/steps/
 behave - i testaddnewtask.feature
 
 behave - i newcategory.feature
+
+behave -i oldtask.feature
+
+behave -i testbutton.feature
